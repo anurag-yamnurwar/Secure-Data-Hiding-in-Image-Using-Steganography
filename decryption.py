@@ -1,6 +1,5 @@
 import cv2
 
-# Load the encrypted image (lossless PNG format)
 img = cv2.imread("encryptedImage.png")
 if img is None:
     print("Encrypted image not found!")
@@ -19,15 +18,11 @@ pas = input("Enter passcode for Decryption: ")
 if pas != correct_pass:
     print("Incorrect passcode. Access denied!")
     exit()
-
-# Ask user for the secret message length.
-# (In this simple example, you need to remember or note the message length.)
 try:
     length = int(input("Enter secret message length: "))
 except ValueError:
     print("Invalid length input!")
     exit()
-
 message = ""
 n = 0  # row index
 m = 0  # column index
